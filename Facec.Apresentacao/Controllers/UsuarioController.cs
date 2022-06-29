@@ -19,7 +19,14 @@ namespace Facec.Apresentacao.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_servico.GetAll());
+            try
+            {
+                return Ok(_servico.GetAll());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
@@ -35,7 +42,5 @@ namespace Facec.Apresentacao.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-
     }
 }

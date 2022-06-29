@@ -12,6 +12,11 @@ namespace Facec.Servicos.Classes
     {
         private readonly List<Usuario> _lista = new List<Usuario>();
 
+        public UsuarioServico()
+        {
+            _lista.Add(new Usuario("juliano", "123"));
+        }
+
         public void Add(Usuario usuario) 
             => _lista.Add(usuario);
 
