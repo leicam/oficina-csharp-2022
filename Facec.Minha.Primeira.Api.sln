@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facec.Minha.Primeira.Api", "Facec.Minha.Primeira.Api\Facec.Minha.Primeira.Api.csproj", "{B588892C-66CD-448D-83F8-9FCAFDA2D7B7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01  - Apresentacao", "01  - Apresentacao", "{7E5C7986-DDF4-4D68-AA61-4BEE10B07ABD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Aplicacao", "02 - Aplicacao", "{5A6B4C6E-C328-4682-A8CC-62EA4840F87C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Dominio", "03 - Dominio", "{BAE7B650-172D-4749-9257-09F16DACEDC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facec.Apresentacao", "Facec.Apresentacao\Facec.Apresentacao.csproj", "{A466897F-0EFC-4E58-9FAC-B5C822805DAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facec.Servicos", "Facec.Servicos\Facec.Servicos.csproj", "{7DB0876D-860E-4C27-A797-59983E67B0D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facec.Dominio", "Facec.Dominio\Facec.Dominio.csproj", "{0836C87F-56FA-43A8-ADC6-6C8A662479D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +21,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B588892C-66CD-448D-83F8-9FCAFDA2D7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B588892C-66CD-448D-83F8-9FCAFDA2D7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B588892C-66CD-448D-83F8-9FCAFDA2D7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B588892C-66CD-448D-83F8-9FCAFDA2D7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A466897F-0EFC-4E58-9FAC-B5C822805DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A466897F-0EFC-4E58-9FAC-B5C822805DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A466897F-0EFC-4E58-9FAC-B5C822805DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A466897F-0EFC-4E58-9FAC-B5C822805DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB0876D-860E-4C27-A797-59983E67B0D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB0876D-860E-4C27-A797-59983E67B0D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB0876D-860E-4C27-A797-59983E67B0D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB0876D-860E-4C27-A797-59983E67B0D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0836C87F-56FA-43A8-ADC6-6C8A662479D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0836C87F-56FA-43A8-ADC6-6C8A662479D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0836C87F-56FA-43A8-ADC6-6C8A662479D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0836C87F-56FA-43A8-ADC6-6C8A662479D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A466897F-0EFC-4E58-9FAC-B5C822805DAD} = {7E5C7986-DDF4-4D68-AA61-4BEE10B07ABD}
+		{7DB0876D-860E-4C27-A797-59983E67B0D3} = {5A6B4C6E-C328-4682-A8CC-62EA4840F87C}
+		{0836C87F-56FA-43A8-ADC6-6C8A662479D9} = {BAE7B650-172D-4749-9257-09F16DACEDC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {676524B6-27F6-4FEC-A529-7E2630116B80}
