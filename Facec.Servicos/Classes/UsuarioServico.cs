@@ -17,8 +17,14 @@ namespace Facec.Servicos.Classes
             _lista.Add(new Usuario("juliano", "123"));
         }
 
-        public void Add(Usuario usuario) 
-            => _lista.Add(usuario);
+        public void Add(Usuario usuario)
+        {
+            if (_lista.FirstOrDefault(x => x.Login == usuario.Login)
+                != null)
+                throw new ApplicationException("Usuário já cadastrado!");
+
+            _lista.Add(usuario);
+        }
 
         public ICollection<Usuario> GetAll() => _lista;
     }
