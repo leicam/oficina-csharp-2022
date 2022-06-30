@@ -1,3 +1,4 @@
+using Facec.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,8 @@ namespace Facec.Apresentacao
 {
     public class Startup
     {
+        private Container _container = new Container();
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,6 +36,17 @@ namespace Facec.Apresentacao
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Facec.Apresentacao", Version = "v1" });
             });
+
+            services.AddSimpleInjector(_container, options =>
+            {
+                options.AddAspNetCore()
+                    .AddControllerActivation();
+                    //.AddViewComponentActivation()
+                    //.AddPageModelActivation()
+                    //.AddTagHelperActivation();
+            });
+
+            Instalador.Registrar(ref _container);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +69,8 @@ namespace Facec.Apresentacao
             {
                 endpoints.MapControllers();
             });
+
+            _container.Verify();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Facec.Dominio.Entidades
 {
-    public class Usuario
+    public class Usuario : AbstractEntidade
     {
         //criar propriedade prop + tab + tab
 
@@ -20,7 +20,7 @@ namespace Facec.Dominio.Entidades
         //criar construtor ctor + tab + tab
 
         [JsonConstructor]
-        public Usuario(string login, string senha)
+        public Usuario(string login, string senha) : base()
         {
             Login = login;
             Senha = senha;

@@ -11,9 +11,9 @@ namespace Facec.Apresentacao.Controllers
     {
         private readonly IUsuarioServico _servico;
 
-        public UsuarioController()
+        public UsuarioController(IUsuarioServico servico)
         {
-            _servico = new UsuarioServico();
+            _servico = servico;
         }
 
         [HttpGet]
