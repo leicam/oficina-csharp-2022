@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "64dab9f7-7509-49b2-b694-ff4e55bfae4a",
+		"name": "Oficina Csharp 2022",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44363/usuario",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"juliano\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44363/usuario",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
