@@ -8,6 +8,16 @@
 		{
 			"name": "usuario",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNWY0NjhiLWQxZmItNGUwYS05ODQwLWE2YWYzNGQwMjdhZiIsInJvbGUiOiJhZG1pbiIsIm5iZiI6MTY1NjYzODUxOSwiZXhwIjoxNjU2NjY3MzE5LCJpYXQiOjE2NTY2Mzg1MTl9.QntP2o7cuhznphHLlgpCgzRju_CBgVq6KeQBuflwjPs",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -47,6 +57,34 @@
 					"port": "44363",
 					"path": [
 						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"juliano\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44363/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44363",
+					"path": [
+						"login"
 					]
 				}
 			},

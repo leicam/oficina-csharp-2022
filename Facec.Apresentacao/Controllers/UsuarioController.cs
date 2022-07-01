@@ -1,6 +1,7 @@
 ﻿using Facec.Dominio.Entidades;
 using Facec.Dominio.Interfaces;
 using Facec.Servicos.Classes;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -17,6 +18,7 @@ namespace Facec.Apresentacao.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
             try

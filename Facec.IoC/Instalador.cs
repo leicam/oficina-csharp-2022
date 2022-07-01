@@ -11,6 +11,9 @@ namespace Facec.IoC
         {
             container
                 .Register<IUsuarioServico, UsuarioServico>(Lifestyle.Singleton);
+
+            container
+                .Register<ILoginServico, LoginServico>(Lifestyle.Singleton);
         }
     }
 }

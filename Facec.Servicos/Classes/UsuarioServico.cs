@@ -14,7 +14,7 @@ namespace Facec.Servicos.Classes
 
         public UsuarioServico()
         {
-            _lista.Add(new Usuario("juliano", "123"));
+            _lista.Add(new Usuario("juliano", "123", "admin"));
         }
 
         public void Add(Usuario usuario)

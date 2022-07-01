@@ -17,6 +17,9 @@ namespace Facec.Dominio.Entidades
         [JsonPropertyName("password")]
         public string Senha { get; private set; }
 
+        [JsonPropertyName("role")]
+        public string Role { get; private set; }
+
         //criar construtor ctor + tab + tab
 
         [JsonConstructor]
@@ -24,6 +27,14 @@ namespace Facec.Dominio.Entidades
         {
             Login = login;
             Senha = senha;
+            Role = "padrao";
+        }
+
+        public Usuario(string login, string senha, string role) : base()
+        {
+            Login = login;
+            Senha = senha;
+            Role = role;
         }
     }
 }
