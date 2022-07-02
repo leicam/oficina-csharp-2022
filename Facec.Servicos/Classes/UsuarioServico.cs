@@ -10,22 +10,25 @@ namespace Facec.Servicos.Classes
 {
     public class UsuarioServico : IUsuarioServico
     {
-        private readonly List<Usuario> _lista = new List<Usuario>();
+        private readonly IUsuarioRepositorio _repositorio;
 
-        public UsuarioServico()
+        public UsuarioServico(IUsuarioRepositorio repositorio)
         {
-            _lista.Add(new Usuario("juliano", "123", "admin"));
+            _repositorio = repositorio;
         }
 
-        public void Add(Usuario usuario)
+        public Usuario Add(Usuario usuario)
         {
-            if (_lista.FirstOrDefault(x => x.Login == usuario.Login)
+            if (_repositorio.GetAll()
+                .FirstOrDefault(x => x.Login == usuario.Login)
                 != null)
                 throw new ApplicationException("Usuário já cadastrado!");
 
-            _lista.Add(usuario);
+            _repositorio.Add(usuario);
+
+            return usuario;
         }
 
-        public ICollection<Usuario> GetAll() => _lista;
+        public ICollection<Usuario> GetAll() => _repositorio.GetAll();
     }
 }

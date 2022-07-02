@@ -12,16 +12,16 @@ namespace Facec.Servicos.Classes
     public class LoginServico : ILoginServico
     {
         private readonly JwtSecurityTokenHandler _handler = new JwtSecurityTokenHandler();
-        private readonly IUsuarioServico _usuarioServico;
+        private readonly IUsuarioRepositorio _repositorio;
 
-        public LoginServico(IUsuarioServico usuarioServico)
+        public LoginServico(IUsuarioRepositorio repositorio)
         {
-            _usuarioServico = usuarioServico;
+            _repositorio = repositorio;
         }
 
         public string Autenticacao(Usuario usuario)
         {
-            usuario = _usuarioServico.GetAll().FirstOrDefault(x
+            usuario = _repositorio.GetAll().FirstOrDefault(x
                 => x.Login == usuario.Login
                 && x.Senha == usuario.Senha);
 

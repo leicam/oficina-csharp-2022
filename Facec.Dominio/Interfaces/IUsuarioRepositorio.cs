@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Facec.Dominio.Interfaces
 {
-    public interface IUsuarioServico
+    public interface IUsuarioRepositorio
     {
         Usuario Add(Usuario usuario);
         ICollection<Usuario> GetAll();

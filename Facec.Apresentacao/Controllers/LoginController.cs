@@ -6,7 +6,7 @@ using System;
 namespace Facec.Apresentacao.Controllers
 {
     [Route("login")]
-    public class LoginController : ControllerBase
+    public class LoginController : AbstractController
     {
         private readonly ILoginServico _servico;
 
@@ -17,15 +17,6 @@ namespace Facec.Apresentacao.Controllers
 
         [HttpPost]
         public IActionResult Post([FromBody] Usuario usuario)
-        {
-            try
-            {
-                return Ok(_servico.Autenticacao(usuario));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+            => InvokeMethod(_servico.Autenticacao, usuario);
     }
 }

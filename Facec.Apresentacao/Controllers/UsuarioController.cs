@@ -8,7 +8,7 @@ using System;
 namespace Facec.Apresentacao.Controllers
 {
     [Route("usuario")]
-    public class UsuarioController : ControllerBase
+    public class UsuarioController : AbstractController
     {
         private readonly IUsuarioServico _servico;
 
@@ -18,31 +18,12 @@ namespace Facec.Apresentacao.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "admin")]
         public IActionResult Get()
-        {
-            try
-            {
-                return Ok(_servico.GetAll());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+            => InvokeMethod(_servico.GetAll);
 
         [HttpPost]
         public IActionResult Post([FromBody] Usuario usuario)
-        {
-            try
-            {
-                _servico.Add(usuario);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+            => InvokeMethod(_servico.Add, usuario);
     }
 }

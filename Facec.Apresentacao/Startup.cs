@@ -70,6 +70,8 @@ namespace Facec.Apresentacao
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.ApplicationServices.UseSimpleInjector(_container);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -81,6 +83,7 @@ namespace Facec.Apresentacao
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
